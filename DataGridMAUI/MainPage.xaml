@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:DataGridMAUI"
+             x:Class="DataGridMAUI.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:Converter x:Key="colorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <syncfusion:SfDataGrid x:Name="dataGrid"
+	AutoGenerateColumnsMode="None"
+                           ColumnWidthMode="Auto"
+                     ItemsSource="{Binding Info}">
+
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:DataGridTextColumn MappingName="ID">
+                <syncfusion:DataGridTextColumn.CellStyle>
+                    <Style TargetType="syncfusion:DataGridCell">                        
+                        <Setter Property="Background" 
+                    Value="{Binding ID, Converter={StaticResource colorConverter}}" />
+                    </Style>
+                </syncfusion:DataGridTextColumn.CellStyle>
+            </syncfusion:DataGridTextColumn>
+
+            <syncfusion:DataGridTextColumn MappingName="Name">
+                <syncfusion:DataGridTextColumn.CellStyle>
+                    <Style TargetType="syncfusion:DataGridCell">
+                        <Setter Property="Background" 
+                    Value="{Binding ID, Converter={StaticResource colorConverter}}" />
+                    </Style>
+                </syncfusion:DataGridTextColumn.CellStyle>
+            </syncfusion:DataGridTextColumn>
+
+            <syncfusion:DataGridTextColumn MappingName="Percentage">
+                <syncfusion:DataGridTextColumn.CellStyle>
+                    <Style TargetType="syncfusion:DataGridCell">
+                        <Setter Property="Background" 
+                    Value="{Binding ID, Converter={StaticResource colorConverter}}" />
+                    </Style>
+                </syncfusion:DataGridTextColumn.CellStyle>
+            </syncfusion:DataGridTextColumn>
+
+            <syncfusion:DataGridTextColumn MappingName="Result">
+                <syncfusion:DataGridTextColumn.CellStyle>
+                    <Style TargetType="syncfusion:DataGridCell">
+                        <Setter Property="Background" 
+                    Value="{Binding ID, Converter={StaticResource colorConverter}}" />
+                    </Style>
+                </syncfusion:DataGridTextColumn.CellStyle>
+            </syncfusion:DataGridTextColumn>
+        </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
+</ContentPage>
